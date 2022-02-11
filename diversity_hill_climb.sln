@@ -9,6 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Server", "Server\Server\Ser
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{8DF6ADB8-BEA3-49B9-B96F-9AED8D30F386}"
 	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
 		server.ini = server.ini
 	EndProjectSection
 EndProject
