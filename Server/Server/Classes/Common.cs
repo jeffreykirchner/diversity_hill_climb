@@ -114,9 +114,9 @@ namespace Server
             movesPerTurn = int.Parse(INI.getINI(sfile, "gameSettings", "movesPerTurn"));
             maxTurnsPerPeriod = int.Parse(INI.getINI(sfile, "gameSettings", "maxTurnsPerPeriod"));            
             maxRoundsPerPeriod = int.Parse(INI.getINI(sfile, "gameSettings", "maxRoundsPerPeriod"));
-
-            periodLength = int.Parse(INI.getINI(sfile, "gameSettings", "periodLength"));
-            readyToGoOnLength = int.Parse(INI.getINI(sfile, "gameSettings", "readyToGoOnLength"));
+                        
+            if (!int.TryParse(INI.getINI(sfile, "gameSettings", "periodLength"), out periodLength)) periodLength = 15;
+            if (!int.TryParse(INI.getINI(sfile, "gameSettings", "readyToGoOnLength"), out readyToGoOnLength)) readyToGoOnLength = 60;
         }
 
         //process incoming message from a client
