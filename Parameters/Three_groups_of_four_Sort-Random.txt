@@ -1,7 +1,7 @@
 [gameSettings]
 gameName=ESI Software
 numberOfPlayers=24
-numberOfPeriods=100
+numberOfPeriods=60
 showInstructions=True
 port=12345
 instructionX=1350
@@ -20,6 +20,7 @@ circleControlPointHigh=50
 minControlPointValue=-100
 maxControlPointValue=100
 maxTurnsPerPeriod=20
+maxDistancePerTurn=200
 movesPerTurn=4
 showFullCircle=False
 maxRoundsPerPeriod=10
