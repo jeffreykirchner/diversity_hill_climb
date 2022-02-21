@@ -107,6 +107,7 @@ namespace Server
                 outstr += Common.minControlPointValue + ";";
                 outstr += Common.maxControlPointValue + ";";
                 outstr += Common.movesPerTurn + ";";
+                outstr += Common.maxDistancePerTurn + ";";
                 outstr += Common.maxTurnsPerPeriod + ";";               
                 outstr += Common.showFullCircle + ";";
                 outstr += Common.maxRoundsPerPeriod + ";";

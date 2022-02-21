@@ -71,6 +71,8 @@
             this.label20 = new System.Windows.Forms.Label();
             this.txtReadyToGoOnLength = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
+            this.txtMaxDistancePerTurn = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // cbTestMode
@@ -376,7 +378,7 @@
             // txtMaxTurnsPerPeriod
             // 
             this.txtMaxTurnsPerPeriod.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMaxTurnsPerPeriod.Location = new System.Drawing.Point(768, 44);
+            this.txtMaxTurnsPerPeriod.Location = new System.Drawing.Point(768, 78);
             this.txtMaxTurnsPerPeriod.Name = "txtMaxTurnsPerPeriod";
             this.txtMaxTurnsPerPeriod.Size = new System.Drawing.Size(162, 26);
             this.txtMaxTurnsPerPeriod.TabIndex = 58;
@@ -385,7 +387,7 @@
             // label19
             // 
             this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(498, 46);
+            this.label19.Location = new System.Drawing.Point(498, 80);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(264, 23);
             this.label19.TabIndex = 57;
@@ -425,7 +427,7 @@
             // txtMaxRoundsPerPeriod
             // 
             this.txtMaxRoundsPerPeriod.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMaxRoundsPerPeriod.Location = new System.Drawing.Point(768, 78);
+            this.txtMaxRoundsPerPeriod.Location = new System.Drawing.Point(768, 112);
             this.txtMaxRoundsPerPeriod.Name = "txtMaxRoundsPerPeriod";
             this.txtMaxRoundsPerPeriod.Size = new System.Drawing.Size(162, 26);
             this.txtMaxRoundsPerPeriod.TabIndex = 65;
@@ -434,7 +436,7 @@
             // label10
             // 
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(498, 80);
+            this.label10.Location = new System.Drawing.Point(498, 114);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(264, 23);
             this.label10.TabIndex = 64;
@@ -444,7 +446,7 @@
             // txtPeriodLength
             // 
             this.txtPeriodLength.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPeriodLength.Location = new System.Drawing.Point(768, 109);
+            this.txtPeriodLength.Location = new System.Drawing.Point(768, 143);
             this.txtPeriodLength.Name = "txtPeriodLength";
             this.txtPeriodLength.Size = new System.Drawing.Size(162, 26);
             this.txtPeriodLength.TabIndex = 67;
@@ -453,7 +455,7 @@
             // label20
             // 
             this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(498, 111);
+            this.label20.Location = new System.Drawing.Point(498, 145);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(264, 23);
             this.label20.TabIndex = 66;
@@ -463,7 +465,7 @@
             // txtReadyToGoOnLength
             // 
             this.txtReadyToGoOnLength.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtReadyToGoOnLength.Location = new System.Drawing.Point(768, 142);
+            this.txtReadyToGoOnLength.Location = new System.Drawing.Point(768, 176);
             this.txtReadyToGoOnLength.Name = "txtReadyToGoOnLength";
             this.txtReadyToGoOnLength.Size = new System.Drawing.Size(162, 26);
             this.txtReadyToGoOnLength.TabIndex = 69;
@@ -472,12 +474,31 @@
             // label11
             // 
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(498, 144);
+            this.label11.Location = new System.Drawing.Point(498, 178);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(264, 23);
             this.label11.TabIndex = 68;
             this.label11.Text = "Ready to Go On Length (sec)";
             this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // txtMaxDistancePerTurn
+            // 
+            this.txtMaxDistancePerTurn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMaxDistancePerTurn.Location = new System.Drawing.Point(768, 44);
+            this.txtMaxDistancePerTurn.Name = "txtMaxDistancePerTurn";
+            this.txtMaxDistancePerTurn.Size = new System.Drawing.Size(162, 26);
+            this.txtMaxDistancePerTurn.TabIndex = 71;
+            this.txtMaxDistancePerTurn.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label13
+            // 
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(498, 46);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(264, 23);
+            this.label13.TabIndex = 70;
+            this.label13.Text = "Max Distance per Trun";
+            this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // frmSetup1
             // 
@@ -485,6 +506,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(980, 371);
             this.ControlBox = false;
+            this.Controls.Add(this.txtMaxDistancePerTurn);
+            this.Controls.Add(this.label13);
             this.Controls.Add(this.txtReadyToGoOnLength);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.txtPeriodLength);
@@ -581,5 +604,7 @@
         internal System.Windows.Forms.Label label20;
         internal System.Windows.Forms.TextBox txtReadyToGoOnLength;
         internal System.Windows.Forms.Label label11;
+        internal System.Windows.Forms.TextBox txtMaxDistancePerTurn;
+        internal System.Windows.Forms.Label label13;
     }
 }

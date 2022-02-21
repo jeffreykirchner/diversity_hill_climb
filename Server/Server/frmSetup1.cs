@@ -40,6 +40,7 @@ namespace Server
                 txtMinControlPointValue.Text = INI.getINI(Common.sfile, "gameSettings", "minControlPointValue");
                 txtMaxControlPointValue.Text = INI.getINI(Common.sfile, "gameSettings", "maxControlPointValue");
                 txtMovesPerTurn.Text = INI.getINI(Common.sfile, "gameSettings", "movesPerTurn");
+                txtMaxDistancePerTurn.Text = INI.getINI(Common.sfile, "gameSettings", "maxDistancePerTurn");
                 txtMaxTurnsPerPeriod.Text = INI.getINI(Common.sfile, "gameSettings", "maxTurnsPerPeriod");                
                 txtMaxRoundsPerPeriod.Text = INI.getINI(Common.sfile, "gameSettings", "maxRoundsPerPeriod");
 
@@ -77,6 +78,7 @@ namespace Server
                 INI.writeINI(Common.sfile, "gameSettings", "minControlPointValue", txtMinControlPointValue.Text);
                 INI.writeINI(Common.sfile, "gameSettings", "maxControlPointValue", txtMaxControlPointValue.Text);
                 INI.writeINI(Common.sfile, "gameSettings", "movesPerTurn", txtMovesPerTurn.Text);
+                INI.writeINI(Common.sfile, "gameSettings", "maxDistancePerTurn", txtMaxDistancePerTurn.Text);
                 INI.writeINI(Common.sfile, "gameSettings", "maxTurnsPerPeriod", txtMaxTurnsPerPeriod.Text);                
                 INI.writeINI(Common.sfile, "gameSettings", "maxRoundsPerPeriod", txtMaxRoundsPerPeriod.Text);
 

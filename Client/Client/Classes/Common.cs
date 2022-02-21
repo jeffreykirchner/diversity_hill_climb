@@ -55,6 +55,7 @@ namespace Client
         public static int minControlPointValue;               //lowest height of control point
         public static int maxControlPointValue;               //max height of a control point  
         public static int movesPerTurn;                       //number moves a subjects gets per turn
+        public static int maxDistancePerTurn;                 //max distance moved per turn
         public static int maxTurnsPerPeriod;                  //max number of turns a subject gets in a period if continuing to climb       
         public static bool showFullCircle;                    //show the entire landscape after the period is over  
         public static int maxRoundsPerPeriod;                 //max number of rounds each period if group improves
@@ -203,6 +204,7 @@ namespace Client
                 minControlPointValue = int.Parse(msgtokens[nextToken++]);
                 maxControlPointValue = int.Parse(msgtokens[nextToken++]);
                 movesPerTurn = int.Parse(msgtokens[nextToken++]);
+                maxDistancePerTurn = int.Parse(msgtokens[nextToken++]);
                 maxTurnsPerPeriod = int.Parse(msgtokens[nextToken++]);                
                 showFullCircle = bool.Parse(msgtokens[nextToken++]);
                 maxRoundsPerPeriod = int.Parse(msgtokens[nextToken++]);
