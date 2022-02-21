@@ -297,7 +297,7 @@ namespace Client
                
                 Common.Frm1.timer1.Enabled = true;
 
-                Common.Frm1.lblDistance.Text = Common.Frm1.lblDistance.Text.Replace("NNNN", (circlePointCount / 2).ToString());
+                Common.Frm1.lblDistance.Text = Common.Frm1.lblDistance.Text.Replace("NNNN", Common.maxDistancePerTurn.ToString());
                 Common.Frm1.lblMaxTurns.Text = Common.Frm1.lblMaxTurns.Text.Replace("N1", maxTurnsPerPeriod.ToString());
                 Common.Frm1.lblMaxTurns.Text = Common.Frm1.lblMaxTurns.Text.Replace("N2", movesPerTurn.ToString());
                                 

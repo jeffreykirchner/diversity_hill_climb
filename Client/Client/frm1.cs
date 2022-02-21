@@ -360,10 +360,10 @@ namespace Client
                                     dgMoves[1, 2].Value = "Clockwise →";
                                     dgMoves[1, 3].Value = "← Counter Clockwise";
 
-                                    dgMoves[2, 0].Value = "300";
-                                    dgMoves[2, 1].Value = "100";
-                                    dgMoves[2, 2].Value = "75";
-                                    dgMoves[2, 3].Value = "250";
+                                    dgMoves[2, 0].Value = "145";
+                                    dgMoves[2, 1].Value = "15";
+                                    dgMoves[2, 2].Value = "90";
+                                    dgMoves[2, 3].Value = "25";
                                 }
                                 else
                                 {
@@ -481,16 +481,32 @@ namespace Client
                 {
                     //check valid
                     if (dgMoves[1, i - 1].Value == null || dgMoves[2, i - 1].Value == null)
+                    {
+                        lblError.Visible = true;
+                        lblError.Text = "Invalid entry, fill all moves.";
                         return;
+                    }
                     else if (!Common.validateNumber(dgMoves[2, i - 1].Value.ToString(), false, false))
+                    {
+                        lblError.Visible = true;
+                        lblError.Text = "Invalid Distance.";
                         return;
+                    }
                     else if (int.TryParse(dgMoves[2, i - 1].Value.ToString(), out int v))
                     {
-                        if (v <= 0 || v > Common.circlePointCount / 2)
+                        if (v <= 0 || v > Common.maxDistancePerTurn)
+                        {
+                            lblError.Visible = true;
+                            lblError.Text = $"Invalid Distance, must be 1 to {Common.maxDistancePerTurn}";
                             return;
+                        }
                     }
                     else
+                    {
+                        lblError.Visible = true;
+                        lblError.Text = "Invalid Entry.";
                         return;
+                    }
 
                     str += dgMoves[1, i - 1].Value + ";";
                     str += dgMoves[2, i - 1].Value + ";";
@@ -498,6 +514,8 @@ namespace Client
                     lastMoveDirections[i - 1] = dgMoves[1, i - 1].Value.ToString();
                     lastMoveDistances[i - 1] = dgMoves[2, i - 1].Value.ToString();
                 }
+
+                lblError.Visible = false;
 
                 if (Common.currentPeriod == 0)
                 {
@@ -508,10 +526,10 @@ namespace Client
                     if (dgMoves[1, 2].Value.ToString() != "Clockwise →") fail = true;
                     if (dgMoves[1, 3].Value.ToString() != "← Counter Clockwise") fail = true;
 
-                    if (dgMoves[2, 0].Value.ToString() != "300") fail = true;
-                    if (dgMoves[2, 1].Value.ToString() != "100") fail = true;
-                    if (dgMoves[2, 2].Value.ToString() != "75") fail = true;
-                    if (dgMoves[2, 3].Value.ToString() != "250") fail = true;
+                    if (dgMoves[2, 0].Value.ToString() != "145") fail = true;
+                    if (dgMoves[2, 1].Value.ToString() != "15") fail = true;
+                    if (dgMoves[2, 2].Value.ToString() != "90") fail = true;
+                    if (dgMoves[2, 3].Value.ToString() != "25") fail = true;
 
                     if (fail)
                     {

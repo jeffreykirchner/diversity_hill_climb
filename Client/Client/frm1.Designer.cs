@@ -77,6 +77,8 @@
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gbSummary = new System.Windows.Forms.GroupBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.txtTimeRemaining = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.txtTotalEarnings = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -84,9 +86,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtPeriod = new System.Windows.Forms.TextBox();
             this.timer3 = new System.Windows.Forms.Timer(this.components);
-            this.label10 = new System.Windows.Forms.Label();
-            this.txtTimeRemaining = new System.Windows.Forms.TextBox();
             this.timer4 = new System.Windows.Forms.Timer(this.components);
+            this.lblError = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgResults)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgMoves)).BeginInit();
@@ -487,9 +488,9 @@
             this.gbGroups.Controls.Add(this.dgGroup);
             this.gbGroups.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbGroups.ForeColor = System.Drawing.Color.DimGray;
-            this.gbGroups.Location = new System.Drawing.Point(7, 372);
+            this.gbGroups.Location = new System.Drawing.Point(7, 406);
             this.gbGroups.Name = "gbGroups";
-            this.gbGroups.Size = new System.Drawing.Size(482, 572);
+            this.gbGroups.Size = new System.Drawing.Size(482, 538);
             this.gbGroups.TabIndex = 45;
             this.gbGroups.TabStop = false;
             this.gbGroups.Text = "Group Information";
@@ -635,6 +636,27 @@
             this.gbSummary.TabStop = false;
             this.gbSummary.Text = "Summary";
             // 
+            // label10
+            // 
+            this.label10.ForeColor = System.Drawing.Color.Black;
+            this.label10.Location = new System.Drawing.Point(416, 13);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(108, 43);
+            this.label10.TabIndex = 7;
+            this.label10.Text = "Time\r\nRemaining";
+            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // txtTimeRemaining
+            // 
+            this.txtTimeRemaining.BackColor = System.Drawing.Color.White;
+            this.txtTimeRemaining.Location = new System.Drawing.Point(416, 58);
+            this.txtTimeRemaining.Name = "txtTimeRemaining";
+            this.txtTimeRemaining.ReadOnly = true;
+            this.txtTimeRemaining.Size = new System.Drawing.Size(108, 26);
+            this.txtTimeRemaining.TabIndex = 6;
+            this.txtTimeRemaining.TabStop = false;
+            this.txtTimeRemaining.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // label8
             // 
             this.label8.ForeColor = System.Drawing.Color.Black;
@@ -704,31 +726,22 @@
             this.timer3.Interval = 250;
             this.timer3.Tick += new System.EventHandler(this.timer3_Tick);
             // 
-            // label10
-            // 
-            this.label10.ForeColor = System.Drawing.Color.Black;
-            this.label10.Location = new System.Drawing.Point(416, 13);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(108, 43);
-            this.label10.TabIndex = 7;
-            this.label10.Text = "Time\r\nRemaining";
-            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // txtTimeRemaining
-            // 
-            this.txtTimeRemaining.BackColor = System.Drawing.Color.White;
-            this.txtTimeRemaining.Location = new System.Drawing.Point(416, 58);
-            this.txtTimeRemaining.Name = "txtTimeRemaining";
-            this.txtTimeRemaining.ReadOnly = true;
-            this.txtTimeRemaining.Size = new System.Drawing.Size(108, 26);
-            this.txtTimeRemaining.TabIndex = 6;
-            this.txtTimeRemaining.TabStop = false;
-            this.txtTimeRemaining.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
             // timer4
             // 
             this.timer4.Interval = 1000;
             this.timer4.Tick += new System.EventHandler(this.timer4_Tick);
+            // 
+            // lblError
+            // 
+            this.lblError.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblError.ForeColor = System.Drawing.Color.Red;
+            this.lblError.Location = new System.Drawing.Point(12, 369);
+            this.lblError.Name = "lblError";
+            this.lblError.Size = new System.Drawing.Size(473, 34);
+            this.lblError.TabIndex = 51;
+            this.lblError.Text = "---";
+            this.lblError.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblError.Visible = false;
             // 
             // frm1
             // 
@@ -736,6 +749,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1901, 956);
             this.ControlBox = false;
+            this.Controls.Add(this.lblError);
             this.Controls.Add(this.gbSummary);
             this.Controls.Add(this.cmdReady);
             this.Controls.Add(this.cmdSubmit);
@@ -817,5 +831,6 @@
         private System.Windows.Forms.Label label10;
         public System.Windows.Forms.TextBox txtTimeRemaining;
         public System.Windows.Forms.Timer timer4;
+        public System.Windows.Forms.Label lblError;
     }
 }
