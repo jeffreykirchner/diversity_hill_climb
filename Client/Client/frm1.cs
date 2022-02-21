@@ -436,7 +436,7 @@ namespace Client
                     else
                         dgMoves[1, i - 1].Value = col.Items[1].ToString();
 
-                    dgMoves[2, i - 1].Value = Rand.rand(Common.circlePointCount / 2, 1);
+                    dgMoves[2, i - 1].Value = Rand.rand(Common.maxDistancePerTurn, 1);
                 }
             }
             catch (Exception ex)
