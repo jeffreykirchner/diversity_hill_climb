@@ -38,6 +38,7 @@ namespace Server
         public static StreamWriter eventsDf;                   //events data file
         public static StreamWriter periodsDf;                  //period data file
         public static StreamWriter groupDf;                   //events data file
+        public static StreamWriter recruiterDf;                //recruiter earnings upload file
 
         //global parameters
         public static int numberOfPlayers;                     //number of players needed
@@ -219,19 +220,27 @@ namespace Server
                     for (int i = 1; i <= numberOfPlayers; i++)
                     {
                         string outstr = "";
+                        string earnings = String.Format(culture, "{0:C}", playerlist[i].earnings / 100);
 
                         outstr = playerlist[i].inumber + ",";
                         outstr += playerlist[i].name + ",";
                         outstr += playerlist[i].studentID + ",";
-                        outstr += String.Format(culture, "{0:C}", playerlist[i].earnings / 100) + ",";
+                        outstr += earnings + ",";
 
                         roundDf.WriteLine(outstr);
+
+                        //recruiter earnings file
+                        string outstr2 = playerlist[i].studentID + ",";
+                        outstr2 += earnings;
+
+                        recruiterDf.WriteLine(outstr2);
                     }
 
                     roundDf.Close();
                     //eventsDf.Close();
                     groupDf.Close();
                     periodsDf.Close();
+                    recruiterDf.Close();
                 }
 
             }

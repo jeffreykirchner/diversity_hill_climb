@@ -171,6 +171,12 @@ namespace Server
 
                 Common.roundDf.WriteLine(str);
 
+                //recruiter payment file
+                filename = "Recruiter_Payments_" + tempTime + ".csv";
+                filename = Application.StartupPath.ToString() + "\\datafiles\\" + filename;
+                Common.recruiterDf = File.CreateText(filename);
+                Common.recruiterDf.AutoFlush = true;
+
                 //summary data file
                 filename = "Period_Data_" + tempTime + ".json";
                 filename = Application.StartupPath.ToString() + "\\datafiles\\" + filename;
@@ -352,6 +358,7 @@ namespace Server
                 if (Common.eventsDf != null) Common.eventsDf.Close();
                 if (Common.groupDf != null) Common.groupDf.Close();
                 if (Common.periodsDf != null) Common.periodsDf.Close();
+                if (Common.recruiterDf != null) Common.recruiterDf.Close();
 
                 bwTakeSocketConnections.CancelAsync();                
                 listener.Close();
