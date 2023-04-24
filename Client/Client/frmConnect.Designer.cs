@@ -99,7 +99,9 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmConnect";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Connect";
+            this.TopMost = true;
             this.Load += new System.EventHandler(this.frmConnect_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
