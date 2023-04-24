@@ -31,12 +31,21 @@ namespace Client
         {
             try
             {
-                SC = new SocketClient();
-                SC.messageReceived += new EventHandler<ListEventArgs>(setTakeMessage);
-                SC.connected += new EventHandler<ListEventArgs>(SC_connected);
-                SC.connectionError += new EventHandler<ListEventArgs>(SC_ConnectionError);
+                if (bwSocket.IsBusy)
+                {
+                    bwSocket.CancelAsync();
+                    SC.close();
+                    Common.FrmConnect.Hide();
+                }
+                else
+                {
+                    SC = new SocketClient();
+                    SC.messageReceived += new EventHandler<ListEventArgs>(setTakeMessage);
+                    SC.connected += new EventHandler<ListEventArgs>(SC_connected);
+                    SC.connectionError += new EventHandler<ListEventArgs>(SC_ConnectionError);
 
-                SC.connect();
+                    SC.connect();
+                }
             }
             catch (Exception ex)
             {

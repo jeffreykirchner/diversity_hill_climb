@@ -614,7 +614,7 @@ namespace Server
             }
             else
             {
-                Common.takeMessage(e.Data);
+                Common.takeMessage(e.Data, (socketPlayer)sender);
             }
         }
 
@@ -699,25 +699,38 @@ namespace Server
                 {
                     Socket tempSocket = listener.Accept();
 
-                    Common.clientCount += 1;
-                    Common.playerlist[Common.clientCount] = new player();
+                    if (cmdBegin.Enabled == true)
+                    {
+                        Common.clientCount += 1;
+                        Common.playerlist[Common.clientCount] = new player();
 
-                    Common.playerlist[Common.clientCount].sp.socketHandler = tempSocket;
+                        Common.playerlist[Common.clientCount].sp.socketHandler = tempSocket;
 
-                    Common.playerlist[Common.clientCount].sp.startReceive();
+                        Common.playerlist[Common.clientCount].sp.startReceive();
 
-                    Common.playerlist[Common.clientCount].sp.messageReceived += new EventHandler<ListEventArgs>(setTakeMessage);
+                        Common.playerlist[Common.clientCount].sp.messageReceived += new EventHandler<ListEventArgs>(setTakeMessage);
 
-                    Common.playerlist[Common.clientCount].inumber = Common.clientCount;
-                    Common.playerlist[Common.clientCount].sp.inumber = Common.clientCount;
+                        Common.playerlist[Common.clientCount].inumber = Common.clientCount;
+                        Common.playerlist[Common.clientCount].sp.inumber = Common.clientCount;
+                    }
+                    else
+                    {
+                        Common.clientCountReconnect += 1;
+                        Common.playerlistRecconnect[Common.clientCountReconnect] = new player();
+
+                        Common.playerlistRecconnect[Common.clientCountReconnect].sp.socketHandler = tempSocket;
+
+                        Common.playerlistRecconnect[Common.clientCountReconnect].sp.startReceive();
+
+                        Common.playerlistRecconnect[Common.clientCountReconnect].sp.messageReceived += new EventHandler<ListEventArgs>(setTakeMessage);
+
+                        Common.playerlistRecconnect[Common.clientCountReconnect].inumber = Common.clientCountReconnect;
+                        Common.playerlistRecconnect[Common.clientCountReconnect].sp.inumber = Common.clientCountReconnect;
+
+                        Common.playerlistRecconnect[Common.clientCountReconnect].sendInvalidConnection();
+                    }
 
                     refreshConnectionsLabel();
-
-                    if (cmdBegin.Enabled == false)
-                    {
-                        Common.playerlist[Common.clientCount].sendInvalidConnection();
-                        Common.clientCount -= 1;
-                    }                
 
                     if (resetPressed)
                         go = false;

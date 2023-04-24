@@ -24,6 +24,9 @@ namespace Server
         public static int clientCount = 0;                        //number of connected clients
         public static player[] playerlist = new player[1000];     //list of connected clients
 
+        public static int clientCountReconnect = 0;
+        public static player[] playerlistRecconnect = new player[1000];     //list of reconnected clients
+
         //forms
         public static frmMain FrmServer;
         public static frmSetup1 FrmSetup1;
@@ -123,7 +126,7 @@ namespace Server
         }
 
         //process incoming message from a client
-        public static void takeMessage(List<string> sinstr)
+        public static void takeMessage(List<string> sinstr, socketPlayer sender)
         {
             try
             {
@@ -152,6 +155,9 @@ namespace Server
                         break;
                     case "INSTRUCTION_PAGE":
                         takeInstructionPage(index, message);
+                        break;
+                    case "RECONNECT_CLIENT":
+                        takeReconnectClient(index, message);
                         break;
                     case "CLIENT_ERROR":
                         takeClientError(index, message);
@@ -289,6 +295,25 @@ namespace Server
                 int tempPage = int.Parse(msgtokens[nextToken++]);
 
                 Common.FrmServer.dgMain[2, index - 1].Value = "Page " + tempPage;
+            }
+            catch (Exception ex)
+            {
+                EventLog.appEventLog_Write("error :", ex);
+            }
+        }
+
+        static void takeReconnectClient(int index, string str)
+        {
+            try
+            {
+                string[] msgtokens = str.Split(';');
+                int nextToken = 0;
+
+                int player_id = int.Parse(msgtokens[nextToken++]);
+
+                playerlist[player_id].sp.socketHandler = playerlistRecconnect[index].sp.socketHandler;
+
+                EventLog.appEventLog_Write("client " + index.ToString() + " reconnect :" + msgtokens[0]);
             }
             catch (Exception ex)
             {

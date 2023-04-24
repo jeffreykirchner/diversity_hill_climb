@@ -429,7 +429,13 @@ namespace Client
             {
                List<string> list = new List<string>();
 
-               FrmClient.SC_ConnectionError(null, new ListEventArgs(list));
+                //FrmClient.SC_ConnectionError(null, new ListEventArgs(list));
+
+                string outstr = "";
+
+                outstr = inumber.ToString();
+
+                Common.FrmClient.SC.sendMessage("RECONNECT_CLIENT", outstr);
             }
             catch (Exception ex)
             {

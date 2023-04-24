@@ -499,7 +499,7 @@
             // 
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.DimGray;
-            this.label9.Location = new System.Drawing.Point(10, 516);
+            this.label9.Location = new System.Drawing.Point(10, 491);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(463, 50);
             this.label9.TabIndex = 53;
@@ -511,7 +511,7 @@
             // 
             this.lblGroup2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblGroup2.ForeColor = System.Drawing.Color.DimGray;
-            this.lblGroup2.Location = new System.Drawing.Point(10, 480);
+            this.lblGroup2.Location = new System.Drawing.Point(10, 463);
             this.lblGroup2.Name = "lblGroup2";
             this.lblGroup2.Size = new System.Drawing.Size(463, 25);
             this.lblGroup2.TabIndex = 52;
@@ -559,7 +559,7 @@
             this.dgGroup.RowTemplate.Height = 26;
             this.dgGroup.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.dgGroup.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dgGroup.Size = new System.Drawing.Size(465, 453);
+            this.dgGroup.Size = new System.Drawing.Size(465, 432);
             this.dgGroup.TabIndex = 46;
             this.dgGroup.CellMouseMove += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgGroup_CellMouseMove);
             // 
