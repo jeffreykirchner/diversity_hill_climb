@@ -7,6 +7,7 @@ using System.IO;
 using System.Threading;
 using System.Drawing;
 using System.Drawing.Drawing2D;
+using System.Reflection;
 
 namespace Server
 {
@@ -263,6 +264,7 @@ namespace Server
                 cmdSetup4.Enabled = false;
                 cmdSetup5.Enabled = false;
                 cmdReplay.Enabled = false;
+                cmdRescue.Enabled = true;
 
                 //load distributions
                 Common.loadValueDistributions();
@@ -374,6 +376,7 @@ namespace Server
                 cmdSetup4.Enabled = true;
                 cmdSetup5.Enabled = true;
                 cmdReplay.Enabled = true;
+                cmdRescue.Enabled = false;
 
                 dgMain.RowCount = 0;
                 Timer1.Enabled = false;
@@ -1308,6 +1311,29 @@ namespace Server
                     selectionColor = moveColor;
 
                 }
+            }
+            catch (Exception ex)
+            {
+                EventLog.appEventLog_Write("error :", ex);
+            }
+        }
+
+        private void cmdRescue_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if(MessageBox.Show("Restart current period?", "Individual", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No) return;
+
+                Common.checkin = 0;
+
+                for (int i = 1; i <= Common.numberOfPlayers; i++)
+                {
+                    Common.playerlist[i].movesSubmitted[Common.currentPeriod] = false;
+                    Common.playerlist[i].readyToGoOnPressed[Common.currentPeriod] = false;
+                    Common.FrmServer.dgMain[2, i - 1].Value = "Playing";
+                }
+
+                Common.setupNextPeriod();
             }
             catch (Exception ex)
             {
