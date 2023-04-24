@@ -313,6 +313,9 @@ namespace Server
 
                 playerlist[player_id].sp.socketHandler = playerlistRecconnect[index].sp.socketHandler;
 
+                playerlistRecconnect[index].inumber = playerlist[player_id].inumber;
+                playerlistRecconnect[index].sp.inumber = playerlist[player_id].sp.inumber;
+
                 EventLog.appEventLog_Write("client " + index.ToString() + " reconnect :" + msgtokens[0]);
             }
             catch (Exception ex)
