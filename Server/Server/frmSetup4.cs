@@ -30,6 +30,18 @@ namespace Server
                 txtStartLocation.Text = INI.getINI(Common.sfile, "instructions", "startingLocation");
                 controlPointCount = int.Parse(INI.getINI(Common.sfile, "instructions", "controlPointCount"));
 
+                direction1.Text = INI.getINI(Common.sfile, "instructions", "direction1");
+                distance1.Text = INI.getINI(Common.sfile, "instructions", "distance1");
+
+                direction2.Text = INI.getINI(Common.sfile, "instructions", "direction2");
+                distance2.Text = INI.getINI(Common.sfile, "instructions", "distance2");
+
+                direction3.Text = INI.getINI(Common.sfile, "instructions", "direction3");
+                distance3.Text = INI.getINI(Common.sfile, "instructions", "distance3");
+
+                direction4.Text = INI.getINI(Common.sfile, "instructions", "direction4");
+                distance4.Text = INI.getINI(Common.sfile, "instructions", "distance4");
+
                 dgInstructions.RowCount = controlPointCount;
 
                 for(int i=1;i<=controlPointCount;i++)
@@ -55,6 +67,18 @@ namespace Server
             {
                 INI.writeINI(Common.sfile, "instructions", "startingLocation", txtStartLocation.Text);
                 INI.writeINI(Common.sfile, "instructions", "controlPointCount", dgInstructions.RowCount.ToString());
+
+                INI.writeINI(Common.sfile, "instructions", "direction1", direction1.Text);
+                INI.writeINI(Common.sfile, "instructions", "distance1", distance1.Text);
+
+                INI.writeINI(Common.sfile, "instructions", "direction2", direction2.Text);
+                INI.writeINI(Common.sfile, "instructions", "distance2", distance2.Text);
+
+                INI.writeINI(Common.sfile, "instructions", "direction3", direction3.Text);
+                INI.writeINI(Common.sfile, "instructions", "distance3", distance3.Text);
+
+                INI.writeINI(Common.sfile, "instructions", "direction4", direction4.Text);
+                INI.writeINI(Common.sfile, "instructions", "distance4", distance4.Text);
 
                 for (int i = 1; i <= controlPointCount; i++)
                 {

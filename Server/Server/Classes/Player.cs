@@ -115,6 +115,15 @@ namespace Server
                 outstr += Common.periodLength + ";";
                 outstr += Common.readyToGoOnLength + ";";
 
+                outstr += Common.exampleDirection1 + ";";
+                outstr += Common.exampleDistance1 + ";";
+                outstr += Common.exampleDirection2 + ";";
+                outstr += Common.exampleDistance2 + ";";
+                outstr += Common.exampleDirection3 + ";";
+                outstr += Common.exampleDistance3 + ";";
+                outstr += Common.exampleDirection4 + ";";
+                outstr += Common.exampleDistance4 + ";";
+
                 outstr += Common.periodList[Common.currentPeriod].toString();
                 outstr += Common.periodList[Common.currentPeriod].periodGroups[groupNumber[Common.currentPeriod]].getGroupList();
 

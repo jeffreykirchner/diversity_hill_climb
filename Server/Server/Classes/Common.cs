@@ -81,6 +81,16 @@ namespace Server
         public static int periodLength=0;                     //period length in secionds
         public static int readyToGoOnLength=0;                //ready to go on lenght in seconds
 
+        //instruction example
+        public static string exampleDirection1;                  //direction of example 1
+        public static int exampleDistance1;                   //distance of example 1
+        public static string exampleDirection2;                  //direction of example 2
+        public static int exampleDistance2;                   //distance of example 2
+        public static string exampleDirection3;                  //direction of example 3
+        public static int exampleDistance3;                   //distance of example 3
+        public static string exampleDirection4;                  //direction of example 4
+        public static int exampleDistance4;                   //distance of example 4
+
         //currency
         public static System.Globalization.CultureInfo culture = System.Globalization.CultureInfo.CreateSpecificCulture("en-US");
 
@@ -120,6 +130,15 @@ namespace Server
             maxDistancePerTurn = int.Parse(INI.getINI(sfile, "gameSettings", "maxDistancePerTurn"));
             maxTurnsPerPeriod = int.Parse(INI.getINI(sfile, "gameSettings", "maxTurnsPerPeriod"));            
             maxRoundsPerPeriod = int.Parse(INI.getINI(sfile, "gameSettings", "maxRoundsPerPeriod"));
+
+            exampleDirection1 = INI.getINI(sfile, "instructions", "direction1");
+            exampleDistance1 = int.Parse(INI.getINI(sfile, "instructions", "distance1"));
+            exampleDirection2 = INI.getINI(sfile, "instructions", "direction2");
+            exampleDistance2 = int.Parse(INI.getINI(sfile, "instructions", "distance2"));
+            exampleDirection3 = INI.getINI(sfile, "instructions", "direction3");
+            exampleDistance3 = int.Parse(INI.getINI(sfile, "instructions", "distance3"));
+            exampleDirection4 = INI.getINI(sfile, "instructions", "direction4");
+            exampleDistance4 = int.Parse(INI.getINI(sfile, "instructions", "distance4"));
                         
             if (!int.TryParse(INI.getINI(sfile, "gameSettings", "periodLength"), out periodLength)) periodLength = 15;
             if (!int.TryParse(INI.getINI(sfile, "gameSettings", "readyToGoOnLength"), out readyToGoOnLength)) readyToGoOnLength = 60;

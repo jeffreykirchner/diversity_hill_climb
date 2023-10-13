@@ -182,6 +182,16 @@ namespace Client
                 RepRTBfield2("periodLength", Common.periodLength.ToString());
                 RepRTBfield2("readyToGoOnLength", Common.readyToGoOnLength.ToString());
 
+                RepRTBfield2("distance1", Common.exampleDistance1.ToString());
+                RepRTBfield2("distance2", Common.exampleDistance2.ToString());
+                RepRTBfield2("distance3", Common.exampleDistance3.ToString());
+                RepRTBfield2("distance4", Common.exampleDistance4.ToString());
+
+                RepRTBfield2("direction1", Common.exampleDirection1 == "CW" ? "Clockwise ->" : "<- Counter Clockwise");
+                RepRTBfield2("direction2", Common.exampleDirection2 == "CW" ? "Clockwise ->" : "<- Counter Clockwise");
+                RepRTBfield2("direction3", Common.exampleDirection3 == "CW" ? "Clockwise ->" : "<- Counter Clockwise");
+                RepRTBfield2("direction4", Common.exampleDirection4 == "CW" ? "Clockwise ->" : "<- Counter Clockwise");
+
                 switch (currentInstruction)
                 {
                     case 1:

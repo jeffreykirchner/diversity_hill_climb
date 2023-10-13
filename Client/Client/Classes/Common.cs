@@ -78,7 +78,17 @@ namespace Client
         public static int timeRemaining = 0;                  //time remaining in game phase         
         public static int periodLength = 0;                   //period length in seconds
         public static int readyToGoOnLength = 0;              //ready to go on length in seconds
-        
+
+        //instruction example
+        public static string exampleDirection1;                  //direction of example 1
+        public static int exampleDistance1;                   //distance of example 1
+        public static string exampleDirection2;                  //direction of example 2
+        public static int exampleDistance2;                   //distance of example 2
+        public static string exampleDirection3;                  //direction of example 3
+        public static int exampleDistance3;                   //distance of example 3
+        public static string exampleDirection4;                  //direction of example 4
+        public static int exampleDistance4;                   //distance of example 4
+
         public static void start()
         {
 
@@ -211,6 +221,15 @@ namespace Client
 
                 periodLength = int.Parse(msgtokens[nextToken++]);
                 readyToGoOnLength = int.Parse(msgtokens[nextToken++]);
+
+                exampleDirection1 = msgtokens[nextToken++];
+                exampleDistance1 = int.Parse(msgtokens[nextToken++]);
+                exampleDirection2 = msgtokens[nextToken++];
+                exampleDistance2 = int.Parse(msgtokens[nextToken++]);
+                exampleDirection3 = msgtokens[nextToken++];
+                exampleDistance3 = int.Parse(msgtokens[nextToken++]);
+                exampleDirection4 = msgtokens[nextToken++];
+                exampleDistance4 = int.Parse(msgtokens[nextToken++]);
 
                 periodList = new Period[numberOfPeriods + 1];
                 moveDirectionsList = new MoveDirections[numberOfPeriods + 1, movesPerTurn + 1];

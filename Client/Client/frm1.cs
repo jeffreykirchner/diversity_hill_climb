@@ -521,15 +521,26 @@ namespace Client
                 {
                     bool fail = false;
 
-                    if (dgMoves[1, 0].Value.ToString() != "Clockwise →") fail = true;
-                    if (dgMoves[1, 1].Value.ToString() != "← Counter Clockwise") fail = true;
-                    if (dgMoves[1, 2].Value.ToString() != "Clockwise →") fail = true;
-                    if (dgMoves[1, 3].Value.ToString() != "← Counter Clockwise") fail = true;
+                    if (dgMoves[1, 0].Value.ToString() != "Clockwise →" && Common.exampleDirection1=="CW" ||
+                        dgMoves[1, 0].Value.ToString() != "← Counter Clockwise" && Common.exampleDirection1 == "CCW") fail = true;
 
-                    if (dgMoves[2, 0].Value.ToString() != "145") fail = true;
-                    if (dgMoves[2, 1].Value.ToString() != "15") fail = true;
-                    if (dgMoves[2, 2].Value.ToString() != "90") fail = true;
-                    if (dgMoves[2, 3].Value.ToString() != "25") fail = true;
+                    if (dgMoves[1, 1].Value.ToString() != "Clockwise →" && Common.exampleDirection2 == "CW" ||
+                        dgMoves[1, 1].Value.ToString() != "← Counter Clockwise" && Common.exampleDirection2 == "CCW") fail = true;
+
+                    if (dgMoves[1, 2].Value.ToString() != "Clockwise →" && Common.exampleDirection3 == "CW" ||
+                        dgMoves[1, 2].Value.ToString() != "← Counter Clockwise" && Common.exampleDirection3 == "CCW") fail = true;
+
+                    if (dgMoves[1, 3].Value.ToString() != "Clockwise →" && Common.exampleDirection4 == "CW" ||
+                        dgMoves[1, 3].Value.ToString() != "← Counter Clockwise" && Common.exampleDirection4 == "CCW") fail = true;
+
+                    //if (dgMoves[1, 1].Value.ToString() != "← Counter Clockwise") fail = true;
+                    //if (dgMoves[1, 2].Value.ToString() != "Clockwise →") fail = true;
+                    //if (dgMoves[1, 3].Value.ToString() != "← Counter Clockwise") fail = true;
+
+                    if (dgMoves[2, 0].Value.ToString() != Common.exampleDistance1.ToString()) fail = true;
+                    if (dgMoves[2, 1].Value.ToString() != Common.exampleDistance2.ToString()) fail = true;
+                    if (dgMoves[2, 2].Value.ToString() != Common.exampleDistance3.ToString()) fail = true;
+                    if (dgMoves[2, 3].Value.ToString() != Common.exampleDistance4.ToString()) fail = true;
 
                     if (fail)
                     {
