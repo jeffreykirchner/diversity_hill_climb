@@ -88,6 +88,7 @@ namespace Client
         public static int exampleDistance3;                   //distance of example 3
         public static string exampleDirection4;                  //direction of example 4
         public static int exampleDistance4;                   //distance of example 4
+        public static string instructionP5;                       //page 5 of instructions
 
         public static void start()
         {
@@ -230,6 +231,7 @@ namespace Client
                 exampleDistance3 = int.Parse(msgtokens[nextToken++]);
                 exampleDirection4 = msgtokens[nextToken++];
                 exampleDistance4 = int.Parse(msgtokens[nextToken++]);
+                instructionP5 = msgtokens[nextToken++];
 
                 periodList = new Period[numberOfPeriods + 1];
                 moveDirectionsList = new MoveDirections[numberOfPeriods + 1, movesPerTurn + 1];

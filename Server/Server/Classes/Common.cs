@@ -90,6 +90,7 @@ namespace Server
         public static int exampleDistance3;                   //distance of example 3
         public static string exampleDirection4;                  //direction of example 4
         public static int exampleDistance4;                   //distance of example 4
+        public static string instructionP5;                       //page 5 of instructions
 
         //currency
         public static System.Globalization.CultureInfo culture = System.Globalization.CultureInfo.CreateSpecificCulture("en-US");
@@ -139,7 +140,8 @@ namespace Server
             exampleDistance3 = int.Parse(INI.getINI(sfile, "instructions", "distance3"));
             exampleDirection4 = INI.getINI(sfile, "instructions", "direction4");
             exampleDistance4 = int.Parse(INI.getINI(sfile, "instructions", "distance4"));
-                        
+            instructionP5 = INI.getINI(sfile, "instructions", "page5");
+
             if (!int.TryParse(INI.getINI(sfile, "gameSettings", "periodLength"), out periodLength)) periodLength = 15;
             if (!int.TryParse(INI.getINI(sfile, "gameSettings", "readyToGoOnLength"), out readyToGoOnLength)) readyToGoOnLength = 60;
         }

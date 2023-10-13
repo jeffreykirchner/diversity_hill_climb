@@ -355,15 +355,15 @@ namespace Client
                             case 4:
                                 if (dgMoves[2, 3].Value.ToString() == "")
                                 {
-                                    dgMoves[1, 0].Value = "Clockwise →";
-                                    dgMoves[1, 1].Value = "← Counter Clockwise";
-                                    dgMoves[1, 2].Value = "Clockwise →";
-                                    dgMoves[1, 3].Value = "← Counter Clockwise";
+                                    dgMoves[1, 0].Value = Common.exampleDirection1 == "CW" ? "Clockwise →" : "← Counter Clockwise"; 
+                                    dgMoves[1, 1].Value = Common.exampleDirection2 == "CW" ? "Clockwise →" : "← Counter Clockwise";
+                                    dgMoves[1, 2].Value = Common.exampleDirection3 == "CW" ? "Clockwise →" : "← Counter Clockwise";
+                                    dgMoves[1, 3].Value = Common.exampleDirection4 == "CW" ? "Clockwise →" : "← Counter Clockwise";
 
-                                    dgMoves[2, 0].Value = "145";
-                                    dgMoves[2, 1].Value = "15";
-                                    dgMoves[2, 2].Value = "90";
-                                    dgMoves[2, 3].Value = "25";
+                                    dgMoves[2, 0].Value = Common.exampleDistance1;
+                                    dgMoves[2, 1].Value = Common.exampleDistance2;
+                                    dgMoves[2, 2].Value = Common.exampleDistance3;
+                                    dgMoves[2, 3].Value = Common.exampleDistance4;
                                 }
                                 else
                                 {

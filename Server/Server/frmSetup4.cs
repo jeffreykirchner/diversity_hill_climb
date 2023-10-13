@@ -42,6 +42,8 @@ namespace Server
                 direction4.Text = INI.getINI(Common.sfile, "instructions", "direction4");
                 distance4.Text = INI.getINI(Common.sfile, "instructions", "distance4");
 
+                page5.Text = INI.getINI(Common.sfile, "instructions", "page5");
+
                 dgInstructions.RowCount = controlPointCount;
 
                 for(int i=1;i<=controlPointCount;i++)
@@ -79,6 +81,8 @@ namespace Server
 
                 INI.writeINI(Common.sfile, "instructions", "direction4", direction4.Text);
                 INI.writeINI(Common.sfile, "instructions", "distance4", distance4.Text);
+
+                INI.writeINI(Common.sfile, "instructions", "page5", page5.Text);
 
                 for (int i = 1; i <= controlPointCount; i++)
                 {

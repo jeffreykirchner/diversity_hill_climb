@@ -55,13 +55,15 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.distance4 = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.page5 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgInstructions)).BeginInit();
             this.SuspendLayout();
             // 
             // cmdSave
             // 
             this.cmdSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmdSave.Location = new System.Drawing.Point(12, 852);
+            this.cmdSave.Location = new System.Drawing.Point(12, 874);
             this.cmdSave.Name = "cmdSave";
             this.cmdSave.Size = new System.Drawing.Size(245, 32);
             this.cmdSave.TabIndex = 45;
@@ -330,12 +332,33 @@
             this.distance4.TabIndex = 63;
             this.distance4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(21, 840);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(65, 20);
+            this.label10.TabIndex = 68;
+            this.label10.Text = "Page 5";
+            // 
+            // page5
+            // 
+            this.page5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.page5.Location = new System.Drawing.Point(130, 838);
+            this.page5.Name = "page5";
+            this.page5.Size = new System.Drawing.Size(121, 26);
+            this.page5.TabIndex = 67;
+            this.page5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // frmSetup4
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(270, 891);
+            this.ClientSize = new System.Drawing.Size(270, 918);
             this.ControlBox = false;
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.page5);
             this.Controls.Add(this.direction4);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label9);
@@ -393,5 +416,7 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox distance4;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox page5;
     }
 }

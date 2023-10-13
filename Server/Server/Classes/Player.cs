@@ -123,6 +123,7 @@ namespace Server
                 outstr += Common.exampleDistance3 + ";";
                 outstr += Common.exampleDirection4 + ";";
                 outstr += Common.exampleDistance4 + ";";
+                outstr += Common.instructionP5 + ";";
 
                 outstr += Common.periodList[Common.currentPeriod].toString();
                 outstr += Common.periodList[Common.currentPeriod].periodGroups[groupNumber[Common.currentPeriod]].getGroupList();

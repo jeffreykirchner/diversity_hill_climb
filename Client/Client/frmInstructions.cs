@@ -142,7 +142,15 @@ namespace Client
             {
                 string folder = "";
 
-                RichTextBox1.LoadFile(Application.StartupPath + "\\instructions\\" + folder + "\\page" + currentInstruction + ".rtf");
+                if(currentInstruction == 5)
+                {
+                    RichTextBox1.LoadFile(Application.StartupPath + "\\instructions\\" + folder + "\\" + Common.instructionP5);
+                }
+                else
+                {
+                    RichTextBox1.LoadFile(Application.StartupPath + "\\instructions\\" + folder + "\\page" + currentInstruction + ".rtf");
+                }
+               
 
                 variables();
 
