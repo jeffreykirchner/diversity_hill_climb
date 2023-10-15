@@ -133,14 +133,17 @@ namespace Server
             maxRoundsPerPeriod = int.Parse(INI.getINI(sfile, "gameSettings", "maxRoundsPerPeriod"));
 
             exampleDirection1 = INI.getINI(sfile, "instructions", "direction1");
-            exampleDistance1 = int.Parse(INI.getINI(sfile, "instructions", "distance1"));
-            exampleDirection2 = INI.getINI(sfile, "instructions", "direction2");
-            exampleDistance2 = int.Parse(INI.getINI(sfile, "instructions", "distance2"));
-            exampleDirection3 = INI.getINI(sfile, "instructions", "direction3");
-            exampleDistance3 = int.Parse(INI.getINI(sfile, "instructions", "distance3"));
-            exampleDirection4 = INI.getINI(sfile, "instructions", "direction4");
-            exampleDistance4 = int.Parse(INI.getINI(sfile, "instructions", "distance4"));
-            instructionP5 = INI.getINI(sfile, "instructions", "page5");
+            if (exampleDirection1 != "?")
+            {
+                exampleDistance1 = int.Parse(INI.getINI(sfile, "instructions", "distance1"));
+                exampleDirection2 = INI.getINI(sfile, "instructions", "direction2");
+                exampleDistance2 = int.Parse(INI.getINI(sfile, "instructions", "distance2"));
+                exampleDirection3 = INI.getINI(sfile, "instructions", "direction3");
+                exampleDistance3 = int.Parse(INI.getINI(sfile, "instructions", "distance3"));
+                exampleDirection4 = INI.getINI(sfile, "instructions", "direction4");
+                exampleDistance4 = int.Parse(INI.getINI(sfile, "instructions", "distance4"));
+                instructionP5 = INI.getINI(sfile, "instructions", "page5");
+            }
 
             if (!int.TryParse(INI.getINI(sfile, "gameSettings", "periodLength"), out periodLength)) periodLength = 15;
             if (!int.TryParse(INI.getINI(sfile, "gameSettings", "readyToGoOnLength"), out readyToGoOnLength)) readyToGoOnLength = 60;
