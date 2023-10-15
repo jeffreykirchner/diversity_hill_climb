@@ -79,6 +79,12 @@ namespace Server
                     for(int j=1;j<=dgGroups.ColumnCount-1;j++)
                     {
                         outstr += dgGroups[j, i].Value + ";";
+
+                        if(i==0 && dgGroups[j, i].Value.ToString()=="Sorted")
+                        {
+                            MessageBox.Show("First period cannot be 'Sorted'","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                            return;
+                        }
                     }
 
                     INI.writeINI(Common.sfile, "periods", (i+1).ToString(), outstr);
